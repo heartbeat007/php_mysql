@@ -21,18 +21,17 @@
 //1. create connection with mysqli_connect(host,user,password,database_name)
 //error will be checked by the mysql_connect_errno() method
 // the connection will be closed by the mysqli_close() method
-$dbhost = "localhost";
+// may create a warning
+$dbhost = "127.0.0.1";
 $dbuser = "root";
 $dbpass = "";
 $dbname = "widget_corp";
-$conn = mysql_connect($dbhost,$dbhost,$dbpass,$dbname);
+$conn = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
 
 if (mysqli_connect_errno()) {
 	die("connection failed ".mysqli_connnect_errno());
 }
-else{
-	echo "<center><h1> connection established </h1></center>";
-}
+
 
 
 mysqli_close($conn);
